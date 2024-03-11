@@ -1,0 +1,37 @@
+﻿<Page x:Class="snovawpf.pages.adminpage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:snovawpf.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="adminpage">
+
+    <Grid Background="#d49a53">
+        <Menu HorizontalAlignment="Center" Height="20" VerticalAlignment="Top" Width="1000">
+            <MenuItem Header="Добавить">
+                <MenuItem Header="Пользователи" Click="MenuItem_Click"/>
+                <MenuItem Header="Книги" Click="MenuItem_Click"/>
+                <MenuItem Header="Аренда книг" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Удалить" >
+                <MenuItem Header="Пользователи" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Книги" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Аренда книг" Click="MenuItem_Click_1"/>
+            </MenuItem>
+            <MenuItem Header="Изменить"/>
+        </Menu>
+        <TextBlock HorizontalAlignment="Left" Margin="193,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="165" FontFamily="Franklin Gothic Heavy" FontSize="24"><Run Language="ru-ru" Text="Админ-панель"/></TextBlock>
+        <Image Source="/content/tk334.png" Margin="23,28,797,464" />
+        <Button Content="Выйти с аккаунта" HorizontalAlignment="Left" Margin="803,65,0,0" VerticalAlignment="Top" Width="157" BorderBrush="Black" Background="White" InputScope="Url" OpacityMask="White" Height="24" Click="Button_Click"/>
+        <DataGrid x:Name="UsersGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="43,215,677,29"/>
+        <DataGrid x:Name="BooksGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="353,215,367,29"/>
+        <DataGrid x:Name="RentsGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="663,215,57,29"/>
+        <TextBlock HorizontalAlignment="Left" Margin="43,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="140" FontFamily="Franklin Gothic Heavy" FontSize="20"><Run Language="ru-ru" Text="Пользователи"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="356,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="60" FontFamily="Franklin Gothic Heavy" FontSize="20"><Run Language="ru-ru" Text="Книги"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="668,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="123" FontFamily="Franklin Gothic Heavy" FontSize="20"><Run Language="ru-ru" Text="Аренда книг"/></TextBlock>
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="43,146,0,0" VerticalAlignment="Top" Width="157" BorderBrush="Black" Background="White" InputScope="Url" OpacityMask="White" Height="24" Click="refreshBT"/>
+
+    </Grid>
+</Page>

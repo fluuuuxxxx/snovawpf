@@ -1,0 +1,26 @@
+﻿<Window x:Class="snovawpf.DialogWindows.UserRentInputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:snovawpf.DialogWindows"
+        mc:Ignorable="d"
+        Title="UserRentInputWindow" Height="250" Width="400">
+    <Grid Background="#d49a53">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Выберите срок аренды:" Margin="10"/>
+
+        <RadioButton x:Name="DayRadioButton" Grid.Row="1" GroupName="RentOptions" Content="На день" Margin="10"/>
+        <RadioButton x:Name="WeekRadioButton" Grid.Row="2" GroupName="RentOptions" Content="На неделю" Margin="10"/>
+        <RadioButton x:Name="MonthRadioButton" Grid.Row="3" GroupName="RentOptions" Content="На месяц" Margin="10"/>
+
+        <Button Grid.Row="4" Content="Арендовать" HorizontalAlignment="Center" Margin="10" Click="Button_Click"/>
+    </Grid>
+</Window>

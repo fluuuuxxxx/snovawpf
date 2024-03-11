@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="biblModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="books">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="author" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="year" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="rents" Relationship="Self.FK_rents_books" FromRole="books" ToRole="rents" />
+  </EntityType>
+  <EntityType Name="rents">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="bookid" Type="Int32" Nullable="false" />
+    <Property Name="datastart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="datafinish" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="books" Relationship="Self.FK_rents_books" FromRole="rents" ToRole="books" />
+    <NavigationProperty Name="users" Relationship="Self.FK_rents_users" FromRole="rents" ToRole="users" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="role1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_role" FromRole="role" ToRole="users" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dr" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="rents" Relationship="Self.FK_rents_users" FromRole="users" ToRole="rents" />
+    <NavigationProperty Name="role" Relationship="Self.FK_users_role" FromRole="users" ToRole="role" />
+  </EntityType>
+  <Association Name="FK_rents_books">
+    <End Role="books" Type="Self.books" Multiplicity="1" />
+    <End Role="rents" Type="Self.rents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="rents">
+        <PropertyRef Name="bookid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rents_users">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="rents" Type="Self.rents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="rents">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_role">
+    <End Role="role" Type="Self.role" Multiplicity="1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="roleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="biblEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="books" EntityType="Self.books" />
+    <EntitySet Name="rents" EntityType="Self.rents" />
+    <EntitySet Name="role" EntityType="Self.role" />
+    <EntitySet Name="users" EntityType="Self.users" />
+    <AssociationSet Name="FK_rents_books" Association="Self.FK_rents_books">
+      <End Role="books" EntitySet="books" />
+      <End Role="rents" EntitySet="rents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rents_users" Association="Self.FK_rents_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="rents" EntitySet="rents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_role" Association="Self.FK_users_role">
+      <End Role="role" EntitySet="role" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

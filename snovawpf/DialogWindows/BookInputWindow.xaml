@@ -1,0 +1,21 @@
+﻿<Window x:Class="snovawpf.DialogWindows.BookInputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:snovawpf.DialogWindows"
+        mc:Ignorable="d" ResizeMode="NoResize"
+        Title="BookInputWindow" Height="450" Width="800">
+    <Grid Background="#d49a53">
+        <TextBox x:Name="namebookbox" HorizontalAlignment="Left" Margin="288,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="288,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="152" FontFamily="Franklin Gothic Book" FontSize="14"><Run Text="В"/><Run Text="ведите"/><Run Text=" н"/><Run Language="ru-ru" Text="азвание книги"/></TextBlock>
+        <TextBox x:Name="authorbox" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="288,174,0,0" VerticalAlignment="Top" Width="230" Height="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="288,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="137" FontFamily="Franklin Gothic Book" FontSize="14"><Run Language="ru-ru" Text="Введите автора книги"/></TextBlock>
+        <Button Content="Внести данные" HorizontalAlignment="Center" Margin="0,324,0,0" VerticalAlignment="Top" Width="156" BorderBrush="Black" Background="White" InputScope="Url" OpacityMask="White" Height="25" Click="regBT"/>
+        <TextBox x:Name="yearbox" HorizontalAlignment="Left" Margin="288,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="288,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="15" Width="165" FontFamily="Franklin Gothic Book" FontSize="14"><Run Text="В"/><Run Text="ведите"/><Run Text=" "/><Run Text="год издания"/><Run Language="ru-ru" Text=" книги"/></TextBlock>
+        <TextBox x:Name="genrebox" HorizontalAlignment="Left" Margin="288,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="288,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="15" Width="122" FontFamily="Franklin Gothic Book" FontSize="14"><Run Text="В"/><Run Text="ведите "/><Run Language="ru-ru" Text="жанр книги"/></TextBlock>
+
+    </Grid>
+</Window>

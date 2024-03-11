@@ -1,0 +1,30 @@
+﻿<Page x:Class="snovawpf.pages.userpage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:snovawpf.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="userpage">
+
+    <Grid Background="#d49a53">
+        <TextBlock HorizontalAlignment="Left" Margin="180,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="155" FontFamily="Franklin Gothic Heavy" FontSize="24"><Run Language="ru-ru" Text="Выбор книги"/></TextBlock>
+        <Image Source="/content/tk334.png" Margin="10,1,810,491" />
+        <Button Content="Выйти с аккаунта" HorizontalAlignment="Left" Margin="790,38,0,0" VerticalAlignment="Top" Width="157" BorderBrush="Black" Background="White" InputScope="Url" OpacityMask="White" Height="24" Click="Button_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="250" Margin="68,155,0,0" Stroke="White" VerticalAlignment="Top" Width="225" Fill="White" RenderTransformOrigin="0.5,0.5"/>
+        <Image Source="/content/persi.png" Margin="104,166,743,206" />
+        <Rectangle HorizontalAlignment="Center" Height="250" Margin="0,155,0,0" Stroke="White" VerticalAlignment="Top" Width="225" Fill="White" RenderTransformOrigin="0.5,0.5"/>
+        <Rectangle HorizontalAlignment="Left" Height="250" Margin="710,155,0,0" Stroke="White" VerticalAlignment="Top" Width="225" Fill="White" RenderTransformOrigin="0.5,0.5"/>
+        <Image Source="/content/garri.png" Margin="424,166,424,206" />
+        <Image Source="/content/tvari.png" Margin="742,160,97,200" />
+        <TextBlock HorizontalAlignment="Left" Margin="68,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="184" FontFamily="Franklin Gothic Heavy" FontSize="24"><Run Language="ru-ru" Text="Перси Джексон"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="388,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="184" FontFamily="Franklin Gothic Heavy" FontSize="24"><Run Language="ru-ru" Text="Гарри Поттер"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="68,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="184" FontFamily="Franklin Gothic Heavy" FontSize="24"><Run Language="ru-ru" Text="Перси Джексон"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="710,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="78" Width="237" FontFamily="Franklin Gothic Heavy" FontSize="20"><Run Language="ru-ru" Text="Фантастические твари и где они обитаю"/></TextBlock>
+        <Button Content="Взять в аренду" HorizontalAlignment="Left" Margin="68,470,0,0" VerticalAlignment="Top" Height="26" Width="132" Click="Button_Click_1"/>
+        <Button Content="Взять в аренду" HorizontalAlignment="Left" Margin="388,470,0,0" VerticalAlignment="Top" Height="26" Width="132" Click="Button_Click_2"/>
+        <Button Content="Взять в аренду" HorizontalAlignment="Left" Margin="710,470,0,0" VerticalAlignment="Top" Height="26" Width="132" Click="Button_Click_3"/>
+
+    </Grid>
+</Page>
